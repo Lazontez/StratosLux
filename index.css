@@ -25,8 +25,18 @@ main{
 #book-now-btn{
     background-color: red;
 }
+#book-now-btn:hover {
+    background-color: red !important;
+    color: black !important;
+}
 #message-us-btn{
     background-color: transparent;
     color: red;
     border-color: red;
 }
+#message-us-btn:hover{
+    background-color: transparent;
+    color: red;
+    border-color: red;
+}
+
