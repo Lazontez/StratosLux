@@ -1,3 +1,8 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
 #navigation-bar{
     background-color: black;
 }
@@ -13,6 +18,15 @@
 
 #header{
     background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+}
+main{
+    background-color: lightgrey;
+}
+#book-now-btn{
+    background-color: red;
+}
+#message-us-btn{
+    background-color: transparent;
+    color: red;
+    border-color: red;
 }
