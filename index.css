@@ -40,3 +40,12 @@ main{
     border-color: red;
 }
 
+.service-cards{
+    background-color: lightgray;
+}
+.service-image{
+    height: 200px;
+    weight: 200px;
+    object-fit: 100%;
+}
+
