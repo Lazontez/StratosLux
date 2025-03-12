@@ -112,16 +112,44 @@ body, html {
     background-color: var(--primary-red);
     color: var(--text-white);
   }
-  .booking-section .booking-btn {
+  .booking-section p {
+    margin-bottom: 30px;
+  }
+  /* Modern Booking Form Styling */
+  .booking-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: #333333;
+  }
+  .booking-form .form-label {
+    color: #333333;
+    font-weight: 500;
+  }
+  .booking-form .form-control,
+  .booking-form .form-select {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  .booking-form .form-control:focus,
+  .booking-form .form-select:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 5px rgba(164,30,52,0.5);
+  }
+  .booking-form .booking-btn {
     background-color: var(--primary-gold);
     border: none;
     color: var(--primary-black);
     padding: 15px 30px;
     font-size: 1.2rem;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
   }
-  .booking-section .booking-btn:hover {
-    background-color: var(--text-white);
+  .booking-form .booking-btn:hover {
+    background-color: #ffffff;
     color: var(--primary-black);
   }
   

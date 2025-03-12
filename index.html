@@ -79,6 +79,10 @@
             <li class="nav-item">
               <a class="nav-link" href="#booking">Book Now</a>
             </li>
+            <!-- Blogs Nav Item Disabled -->
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Blogs (Coming Soon)</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -206,13 +210,61 @@
   </section>
   
   <!-- Booking Section -->
-  <section id="booking" class="booking-section py-5">
-    <div class="container text-center">
-      <h2 class="section-title">Ready for a Showroom Shine?</h2>
-      <p>Book your detailing appointment now and experience the luxury of a perfectly clean car.</p>
-      <a href="https://calendar.app.google/xnhcTeQPCdZE4K6W6" class="btn btn-lg booking-btn">Book Now</a>
+  <!-- <section id="booking" class="booking-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Ready for a Showroom Shine?</h2>
+      <p class="text-center">Fill out the form below to book your detailing appointment.</p>
+      <form id="bookingForm" class="booking-form mx-auto" style="max-width: 600px;">
+        <div class="mb-3">
+          <label for="customerName" class="form-label">Name</label>
+          <input type="text" class="form-control" id="customerName" name="customerName" required>
+        </div>
+        <div class="mb-3">
+          <label for="customerEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
+        </div>
+        <div class="mb-3">
+          <label for="customerPhone" class="form-label">Phone</label>
+          <input type="tel" class="form-control" id="customerPhone" name="customerPhone" required>
+        </div>
+        <div class="mb-3">
+          <label for="serviceType" class="form-label">Service</label>
+          <select class="form-select" id="serviceType" name="serviceType" required>
+            <option value="" selected disabled>Select a Service</option>
+            <option value="exteriorWash">Exterior Wash – $30</option>
+            <option value="exteriorInteriorDetail">Exterior &amp; Interior Detail – $60</option>
+            <option value="fullInteriorDetail">Full Interior Detail – $80</option>
+            <option value="fullExteriorDetail">Full Exterior Detail – $100</option>
+            <option value="fullDetailingPackage">Full Detailing Package – $160</option>
+          </select>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="preferredDate" class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" id="preferredDate" name="preferredDate" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="preferredTime" class="form-label">Preferred Time</label>
+            <input type="time" class="form-control" id="preferredTime" name="preferredTime" required>
+          </div>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-lg booking-btn">Submit Booking</button>
+        </div>
+      </form> -->
+      <!-- Note: Please integrate your backend API for booking functionality -->
     </div>
   </section>
+  
+  <!-- Blogs Section (Disabled/Coming Soon) -->
+  <!--
+  <section id="blogs" class="blogs-section py-5">
+    <div class="container">
+      <h2 class="section-title text-center">Our Blogs</h2>
+      <p class="text-center">Coming Soon...</p>
+    </div>
+  </section>
+  -->
   
   <!-- Footer -->
   <footer class="footer-section bg-black text-white py-3">
@@ -222,7 +274,19 @@
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Optionally add JS to handle form submission and animations -->
+  <script>
+    // Sample booking form submission handler (to be integrated with your backend)
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Gather form data
+      const formData = new FormData(this);
+      // TODO: Send formData to your backend API for processing bookings
+      console.log(formData)
+      alert('Booking submitted! Integration pending.');
+      this.reset();
+    });
+  </script>
 </body>
 
 </html>
-
