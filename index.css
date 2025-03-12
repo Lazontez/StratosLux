@@ -1,51 +1,157 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-#navigation-bar{
-    background-color: black;
-}
-
-#nav-banner{
-    text-align: center;
-    background-color: red;
-    padding: 10px;
-}
-.navbar{
-    background-color: black;
-}
-
-#header{
-    background-color: black;
-}
-main{
-    background-color: lightgrey;
-}
-#book-now-btn{
-    background-color: red;
-}
-#book-now-btn:hover {
-    background-color: red !important;
-    color: black !important;
-}
-#message-us-btn{
-    background-color: transparent;
-    color: red;
-    border-color: red;
-}
-#message-us-btn:hover{
-    background-color: transparent;
-    color: red;
-    border-color: red;
-}
-
-.service-cards{
-    background-color: lightgray;
-}
-.service-image{
+/* Global Reset & Smooth Scrolling */
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+  }
+  
+  /* Color Variables */
+  :root {
+    --primary-black: #000000;
+    --primary-red: #A41E34;  /* Deep, luxurious red */
+    --primary-gold: #C5A880; /* Refined gold accent */
+    --text-white: #ffffff;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--primary-black);
+  }
+  .navbar .nav-link {
+    color: var(--text-white);
+    font-weight: 500;
+  }
+  .navbar .nav-link:hover {
+    color: var(--primary-gold);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 100vh;
+    background: url('./assets/stratoslux_car+detailing_middle_tn.jpg') center center/cover no-repeat;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-title {
+    font-size: 3rem;
+    color: var(--text-white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    animation: slideDown 1s ease-out;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 20px;
+    animation: slideUp 1s ease-out;
+  }
+  .hero-btn {
+    background-color: var(--primary-red);
+    border: none;
+    color: var(--text-white);
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+  }
+  .hero-btn:hover {
+    background-color: var(--primary-gold);
+    color: var(--primary-black);
+  }
+  
+  /* Services Section */
+  .services-section {
+    background-color: var(--primary-black);
+    color: var(--text-white);
+  }
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary-red);
+  }
+  .service-card {
+    background-color: var(--primary-black);
+    border: 1px solid var(--primary-gold);
+  }
+  .service-card img {
     height: 200px;
-    weight: 200px;
-    object-fit: 100%;
-}
-
+    object-fit: cover;
+  }
+  .service-card .card-title {
+    color: var(--primary-gold);
+    font-weight: bold;
+  }
+  .service-card .card-text {
+    color: var(--text-white);
+  }
+  
+  /* Reviews Section */
+  .reviews-section {
+    background-color: var(--primary-black);
+    color: var(--text-white);
+  }
+  .carousel-item blockquote {
+    font-size: 1.2rem;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: invert(1);
+  }
+  
+  /* Booking Section */
+  .booking-section {
+    background-color: var(--primary-red);
+    color: var(--text-white);
+  }
+  .booking-section .booking-btn {
+    background-color: var(--primary-gold);
+    border: none;
+    color: var(--primary-black);
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+  }
+  .booking-section .booking-btn:hover {
+    background-color: var(--text-white);
+    color: var(--primary-black);
+  }
+  
+  /* Footer */
+  .footer-section {
+    background-color: var(--primary-black);
+    color: var(--text-white);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+  
