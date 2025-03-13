@@ -52,7 +52,6 @@
 </head>
 
 <body>
-  <!-- Header / Navbar -->
   <header>
     <div id="nav-banner" class="text-center py-2 bg-dark text-white">Call Us Now! (615)-922-1552</div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
@@ -79,7 +78,6 @@
             <li class="nav-item">
               <a class="nav-link" href="#booking">Book Now</a>
             </li>
-            <!-- Blogs Nav Item Disabled -->
             <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Blogs (Coming Soon)</a>
             </li>
@@ -117,7 +115,6 @@
             </div>
           </div>
         </div>
-        <!-- Service Card 2 -->
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card service-card">
             <img src="./assets/stratoslux_car_exterior_wash.jpg" class="card-img-top" alt="Exterior & Interior Detail">
@@ -129,7 +126,6 @@
             </div>
           </div>
         </div>
-        <!-- Service Card 3 -->
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card service-card">
             <img src="./assets/stratoslux_car_full_interior_wash.jpg" class="card-img-top" alt="Full Interior Detail">
@@ -141,7 +137,6 @@
             </div>
           </div>
         </div>
-        <!-- Service Card 4 -->
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card service-card">
             <img src="./assets/stratoslux_car_full_exterior_wash.jpg" class="card-img-top" alt="Full Exterior Detail">
@@ -153,7 +148,6 @@
             </div>
           </div>
         </div>
-        <!-- Service Card 5 -->
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card service-card">
             <img src="./assets/stratoslux_car_full_package_wash.jpg" class="card-img-top" alt="Full Detailing Package">
@@ -169,31 +163,40 @@
     </div>
   </section>
   
-  <!-- Reviews Section -->
+
   <section id="reviews" class="reviews-section py-5 bg-dark text-white">
     <div class="container">
       <h2 class="section-title text-center">What Our Clients Say</h2>
       <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <!-- Review 1 -->
           <div class="carousel-item active">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"StratosLux Detailing transformed my car into a showroom masterpiece. Highly recommended!"</p>
-              <footer class="blockquote-footer text-white">John D.</footer>
+              <p class="mb-4">"I recently had my car detailed by StratosLux Detailing and was blown away by their professionalism and attention to detail. My car now shines like it just rolled out of the showroom. Highly recommended!"</p>
+              <footer class="blockquote-footer text-white">Marcus H.</footer>
             </blockquote>
           </div>
-          <!-- Review 2 -->
           <div class="carousel-item">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"Exceptional service and attention to detail. My car has never looked better."</p>
-              <footer class="blockquote-footer text-white">Sarah W.</footer>
+              <p class="mb-4">"StratosLux Detailing gave my old hatchback a fresh new look! They were punctual, friendly, and the service was worth every penny. My car's interior has never looked cleaner. I'm a very happy customer!"</p>
+              <footer class="blockquote-footer text-white">Elena M.</footer>
             </blockquote>
           </div>
-          <!-- Review 3 -->
           <div class="carousel-item">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"Convenient and professional – the best mobile detailing service in town!"</p>
-              <footer class="blockquote-footer text-white">Michael R.</footer>
+              <p class="mb-4">"As a busy entrepreneur, convenience and quality are key. StratosLux came right to my office and transformed my car in no time. The team was courteous, efficient, and left everything spotless. I'll definitely book again!"</p>
+              <footer class="blockquote-footer text-white">David L.</footer>
+            </blockquote>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote text-center">
+              <p class="mb-4">"I'm really particular about my car's appearance, and StratosLux Detailing exceeded all my expectations. Their meticulous approach and premium service truly set them apart. My car has never looked better!"</p>
+              <footer class="blockquote-footer text-white">Samantha R.</footer>
+            </blockquote>
+          </div>
+          <div class="carousel-item">
+            <blockquote class="blockquote text-center">
+              <p class="mb-4">"I have two kids and a dog, so my SUV was basically a rolling disaster. Crumbs, pet hair, mystery stains—StratosLux handled it all like magic. It looks and smells brand new! I honestly didn’t think it was possible. Worth every cent!"</p>
+              <footer class="blockquote-footer text-white">Jessica T.</footer>
             </blockquote>
           </div>
         </div>
@@ -210,51 +213,52 @@
   </section>
   
   <!-- Booking Section -->
-  <!-- <section id="booking" class="booking-section py-5">
-    <div class="container">
-      <h2 class="section-title text-center">Ready for a Showroom Shine?</h2>
-      <p class="text-center">Fill out the form below to book your detailing appointment.</p>
-      <form id="bookingForm" class="booking-form mx-auto" style="max-width: 600px;">
-        <div class="mb-3">
-          <label for="customerName" class="form-label">Name</label>
-          <input type="text" class="form-control" id="customerName" name="customerName" required>
+<section id="booking" class="booking-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Ready for a Showroom Shine?</h2>
+    <p class="text-center">Fill out the form below to book your detailing appointment.</p>
+    <form action="https://formsubmit.co/stratoslux@gmail.com" method="POST" id="bookingForm" class="booking-form mx-auto" style="max-width: 600px;">
+      <div class="mb-3">
+        <label for="customerName" class="form-label">Name</label>
+        <input type="text" class="form-control" id="customerName" name="customerName" required>
+      </div>
+      <div class="mb-3">
+        <label for="customerEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
+      </div>
+      <div class="mb-3">
+        <label for="customerPhone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" id="customerPhone" name="customerPhone" required>
+      </div>
+      <div class="mb-3">
+        <label for="serviceType" class="form-label">Service</label>
+        <select class="form-select" id="serviceType" name="serviceType" required>
+          <option value="" selected disabled>Select a Service</option>
+          <option value="exteriorWash">Exterior Wash – $30</option>
+          <option value="exteriorInteriorDetail">Exterior &amp; Interior Detail – $60</option>
+          <option value="fullInteriorDetail">Full Interior Detail – $80</option>
+          <option value="fullExteriorDetail">Full Exterior Detail – $100</option>
+          <option value="fullDetailingPackage">Full Detailing Package – $160</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="preferredDate" class="form-label">Preferred Date</label>
+          <input type="date" class="form-control" id="preferredDate" name="preferredDate" required>
         </div>
-        <div class="mb-3">
-          <label for="customerEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
+        <div class="col-md-6 mb-3">
+          <label for="preferredTime" class="form-label">Preferred Time</label>
+          <input type="time" class="form-control" id="preferredTime" name="preferredTime" required>
         </div>
-        <div class="mb-3">
-          <label for="customerPhone" class="form-label">Phone</label>
-          <input type="tel" class="form-control" id="customerPhone" name="customerPhone" required>
-        </div>
-        <div class="mb-3">
-          <label for="serviceType" class="form-label">Service</label>
-          <select class="form-select" id="serviceType" name="serviceType" required>
-            <option value="" selected disabled>Select a Service</option>
-            <option value="exteriorWash">Exterior Wash – $30</option>
-            <option value="exteriorInteriorDetail">Exterior &amp; Interior Detail – $60</option>
-            <option value="fullInteriorDetail">Full Interior Detail – $80</option>
-            <option value="fullExteriorDetail">Full Exterior Detail – $100</option>
-            <option value="fullDetailingPackage">Full Detailing Package – $160</option>
-          </select>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="preferredDate" class="form-label">Preferred Date</label>
-            <input type="date" class="form-control" id="preferredDate" name="preferredDate" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="preferredTime" class="form-label">Preferred Time</label>
-            <input type="time" class="form-control" id="preferredTime" name="preferredTime" required>
-          </div>
-        </div>
-        <div class="d-grid">
-          <button type="submit" class="btn btn-lg booking-btn">Submit Booking</button>
-        </div>
-      </form> -->
-      <!-- Note: Please integrate your backend API for booking functionality -->
-    </div>
-  </section>
+      </div>
+      <input type="hidden" name="_next" value="http://stratosluxdetailing.com">
+      <input type="hidden" name="_subject" value="New Booking Submission">
+      <div class="d-grid">
+        <button type="submit" id="bookingSubmit" class="btn btn-lg booking-btn">Submit Booking</button>
+      </div>
+    </form>
+  </div>
+</section>
   
   <!-- Blogs Section (Disabled/Coming Soon) -->
   <!--
@@ -274,17 +278,9 @@
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <!-- Optionally add JS to handle form submission and animations -->
   <script>
-    // Sample booking form submission handler (to be integrated with your backend)
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Gather form data
-      const formData = new FormData(this);
-      // TODO: Send formData to your backend API for processing bookings
-      console.log(formData)
-      alert('Booking submitted! Integration pending.');
-      this.reset();
+      alert('Thank you for booking with us!');
     });
   </script>
 </body>
