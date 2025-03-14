@@ -246,7 +246,7 @@
         </div>
         <div class="mb-3">
           <label for="customerEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="customerEmail" name="customerEmail" required>
+          <input type="email" class="form-control" id="customerEmail" name="email" required>
         </div>
         <div class="mb-3">
           <label for="customerPhone" class="form-label">Phone</label>
@@ -279,7 +279,10 @@
         </div>
         <input type="hidden" name="_next" value="http://stratosluxdetailing.com">
         <input type="hidden" name="_subject" value="New Booking Submission">
-        <input type="hidden" name="_autoresponse" value="Thank you for booking with StratosLux Detailing! We'll contact you soon." />
+        <input type="hidden" name="_from" value="StratosLux Detailing">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Thank you for your booking with StratosLux Detailing! We'll follow up shortly to confirm your booking." />
+        
 
         <div class="d-grid">
           <button type="submit" id="bookingSubmit" class="btn btn-lg booking-btn">Submit Booking</button>
