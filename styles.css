@@ -1,0 +1,80 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.thank-you-message h1 {
+    color: #4CAF50;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.thank-you-message p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.thank-you-message a.back-link {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.thank-you-message a.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
