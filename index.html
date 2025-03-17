@@ -64,6 +64,21 @@
 
   gtag('config', 'AW-16923276771');
 </script>
+
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16923276771/nkrvCOybiawaEOPr0oU_',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
 </head>
 
 <body>
@@ -297,7 +312,7 @@
 
 
         <div class="d-grid">
-          <button type="submit" id="bookingSubmit" class="btn btn-lg booking-btn">Submit Booking</button>
+          <button type="submit" id="bookingSubmit" class="btn btn-lg booking-btn" onclick="gtag_report_conversion()">Submit Booking</button>
         </div>
       </form>
     </div>
