@@ -258,28 +258,26 @@
     </div>
   </section>
 
-  <!-- Booking Section -->
   <section id="booking" class="booking-section py-5">
     <div class="container">
       <h2 class="section-title text-center">Ready for a Showroom Shine?</h2>
       <p class="text-center">Fill out the form below to book your detailing appointment.</p>
-      <form action="https://formsubmit.co/stratoslux@gmail.com?origin=http://stratosluxdetailing.com" method="POST"
-        id="bookingForm" class="booking-form mx-auto" style="max-width: 600px;">
+      <form id="bookingForm" class="booking-form mx-auto" style="max-width: 600px;">
         <div class="mb-3">
           <label for="customerName" class="form-label">Name</label>
-          <input type="text" class="form-control" id="customerName" name="customerName" required>
+          <input type="text" class="form-control" id="customerName" name="customerName" required />
         </div>
         <div class="mb-3">
           <label for="customerEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="customerEmail" name="email" required>
+          <input type="email" class="form-control" id="customerEmail" name="customerEmail" required />
         </div>
         <div class="mb-3">
           <label for="customerPhone" class="form-label">Phone</label>
-          <input type="tel" class="form-control" id="customerPhone" name="customerPhone" required>
+          <input type="tel" class="form-control" id="customerPhone" name="customerPhone" required />
         </div>
         <div class="mb-3">
-          <label for="preferredLocation"  class="form-label">Service Address</label>
-          <input type="text" class="form-control" placeholder="Street address, city, and zip code" id="preferredLocation" name="preferredLocation" required>
+          <label for="preferredLocation" class="form-label">Service Address</label>
+          <input type="text" class="form-control" placeholder="Street address, city, and zip code" id="preferredLocation" name="preferredLocation" required />
         </div>
         <div class="mb-3">
           <label for="serviceType" class="form-label">Service</label>
@@ -295,29 +293,20 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="preferredDate" class="form-label">Preferred Date</label>
-            <input type="date" class="form-control" id="preferredDate" name="preferredDate" required>
+            <input type="date" class="form-control" id="preferredDate" name="preferredDate" required />
           </div>
           <div class="col-md-6 mb-3">
             <label for="preferredTime" class="form-label">Preferred Time</label>
-            <input type="time" class="form-control" id="preferredTime" name="preferredTime"
-              required>
+            <input type="time" class="form-control" id="preferredTime" name="preferredTime" required />
           </div>
         </div>
-        <input type="hidden" name="_next" value="http://stratosluxdetailing.com/thank-you.html">
-        <input type="hidden" name="_subject" value="New Booking Submission">
-        <input type="hidden" name="_from" value="StratosLux Detailing">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_autoresponse"
-          value="Thank you for your booking with StratosLux Detailing! We'll follow up shortly to confirm your booking." />
-
-
         <div class="d-grid">
-          <button type="submit" id="bookingSubmit" class="btn btn-lg booking-btn" onclick="gtag_report_conversion()">Submit Booking</button>
+          <button type="submit" id="bookingSubmit" class="btn btn-lg booking-btn">Submit Booking</button>
         </div>
       </form>
+      <div id="bookingMessage" class="mt-3 text-center"></div>
     </div>
   </section>
-
   <!-- Blogs Section (Disabled/Coming Soon) -->
   <!--
   <section id="blogs" class="blogs-section py-5">
@@ -353,7 +342,45 @@
     // });
   </script>
 
-  </script>
+<script>
+  // Set minimum date for booking input
+  document.addEventListener("DOMContentLoaded", function () {
+    let today = new Date().toISOString().split("T")[0];
+    document.getElementById("preferredDate").setAttribute("min", today);
+  });
+
+  // Booking form submission handler
+  document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const bookingData = {
+      customerName: document.getElementById("customerName").value,
+      customerEmail: document.getElementById("customerEmail").value,
+      customerPhone: document.getElementById("customerPhone").value,
+      preferredLocation: document.getElementById("preferredLocation").value,
+      serviceType: document.getElementById("serviceType").value,
+      preferredDate: document.getElementById("preferredDate").value,
+      preferredTime: document.getElementById("preferredTime").value
+    };
+
+    try {
+      const response = await fetch("https://stratoslux-backend.onrender.com/api/bookings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingData)
+      });
+
+      if (response.ok) {
+        document.getElementById("bookingForm").reset();
+        document.getElementById("bookingMessage").textContent = "Thank you for your booking! We will follow up shortly.";
+      } else {
+        document.getElementById("bookingMessage").textContent = "There was an error processing your booking. Please try again later.";
+      }
+    } catch (error) {
+      console.error("Error submitting booking:", error);
+      document.getElementById("bookingMessage").textContent = "There was an error submitting your booking. Please check your connection and try again.";
+    }
+  });
+</script>
 
 </body>
 
