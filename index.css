@@ -8,8 +8,8 @@ body, html {
   /* Color Variables */
   :root {
     --primary-black: #000000;
-    --primary-red: #A41E34;  /* Deep, luxurious red */
-    --primary-gold: #C5A880; /* Refined gold accent */
+    --primary-red: #A41E34;  
+    --primary-gold: #C5A880;
     --text-white: #ffffff;
   }
   
