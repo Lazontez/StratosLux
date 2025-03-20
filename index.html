@@ -230,7 +230,6 @@
 
     document.getElementById("bookingForm").addEventListener("submit", async function (e) {
       e.preventDefault();
-      // Updated booking data keys to match the backend (all lowercase)
       const bookingData = {
         customername: document.getElementById("customerName").value,
         customeremail: document.getElementById("customerEmail").value,
@@ -250,7 +249,7 @@
 
         if (response.ok) {
           document.getElementById("bookingForm").reset();
-          document.getElementById("bookingMessage").textContent = "Thank you for your booking! We will follow up shortly.";
+          window.location.href = "thank-you.html";
         } else {
           document.getElementById("bookingMessage").textContent = "There was an error processing your booking. Please try again later.";
         }
