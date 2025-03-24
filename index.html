@@ -372,13 +372,11 @@
     crossorigin="anonymous"></script>
 
   <script>
-    // Initialize flatpickr on the preferredDate input
     document.addEventListener("DOMContentLoaded", function () {
       flatpickr("#preferredDate", {
-        minDate: new Date().fp_incr(1), // set min date to tomorrow
+        minDate: new Date().fp_incr(3), // set min date to two days for now
         disable: [
           function(date) {
-            // Allow only Sunday (0), Monday (1), or Tuesday (2)
             return !(date.getDay() === 0 || date.getDay() === 1 || date.getDay() === 2);
           }
         ],
