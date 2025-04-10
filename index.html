@@ -394,10 +394,10 @@
         customername: document.getElementById("customerName").value,
         customeremail: document.getElementById("customerEmail").value,
         customerphone: document.getElementById("customerPhone").value,
-        preferredlocation: document.getElementById("preferredLocation").value,
+        preferredlocation: document.getElementById("preferredLocation").value || "Not Added",
         servicetype: document.getElementById("serviceType").value,
-        preferreddate: document.getElementById("preferredDate").value,
-        preferredtime: document.getElementById("preferredTime").value
+        preferreddate: document.getElementById("preferredDate").value || "1/1/2025",
+        preferredtime: document.getElementById("preferredTime").value || "00:00:00"
       };
 
       try {
