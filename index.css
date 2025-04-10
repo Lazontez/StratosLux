@@ -186,4 +186,6 @@ body, html {
       font-size: 1.2rem;
     }
   }
-  
+  .requiredField{
+    color: red;
+  }
