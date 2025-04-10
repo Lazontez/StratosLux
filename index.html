@@ -380,13 +380,11 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       flatpickr("#preferredDate", {
-        minDate: new Date().fp_incr(2), // set min date to two days for now
-        disable: [
-          function (date) {
-            return !(date.getDay() === 0 || date.getDay() === 1 || date.getDay() === 2);
-          }
+        minDate: new Date().fp_incr(1), // set min date to two days for now
+        disable: [ '2025-04-15','2025-04-13' , 
         ],
-        dateFormat: "Y-m-d"
+        dateFormat: "Y-m-d", 
+        altInput: true
       });
     });
 
