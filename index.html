@@ -455,6 +455,22 @@
 
       window.discountApplied = localStorage.getItem("discountApplied") === "true";
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      flatpickr("#preferredDate", {
+        dateFormat: "m/d/Y", 
+        minDate: new Date().fp_incr(1), 
+        maxDate: new Date().fp_incr(90), 
+        altInput: true,
+        altFormat: "F j", 
+        disableMobile: true, // Force desktop-style calendar on mobile
+        disable: [
+          "2025-04-20", // Easter (April 20, 2025)
+          "2025-04-21", // Day after Easter
+          "2025-04-30"  // April 30, 2025
+        ]
+      });
+    });
   </script>
 
 
