@@ -101,21 +101,26 @@
       return false;
     }
 
-
+    document.addEventListener("DOMContentLoaded", function () {
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+    new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+});
   </script>
 </head>
 
 <body>
   <!-- Call Banner -->
   <div id="nav-call-banner" class="text-center py-2 bg-dark text-white">
-    <a href="tel:+16159221552" class="text-white" style="text-decoration: none;">
-      Call Us Now! (615)-922-1552
+    <a href="tel:+16159221552" class="text-white" style="text-decoration: none;" data-bs-toggle="tooltip" title="Click to call us!">
+      <i class="fas fa-phone-alt me-2"></i> Give Us A Call! (615)-922-1552
     </a>
   </div>
   <header class="sticky-top">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <div class="container">
+      <div class="container" >
         <a class="navbar-brand" href="#">
           <img src="./assets/stratoslux_car_detailing_smyrna_tn_logo.svg" alt="StratosLux Detailing Logo"
             style="height: 80px;" />
