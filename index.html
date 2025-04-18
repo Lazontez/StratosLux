@@ -383,10 +383,77 @@
       <p>&copy; 2025 StratosLux Detailing. All rights reserved.</p>
     </div>
   </footer>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let duration = 15 * 60; // 15 minutes in seconds
+      let discountApplied = false;
+  
+      const dealBanner = document.getElementById("deal-banner");
+  
+      const countdown = setInterval(() => {
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
+  
+        if (dealBanner) {
+          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes}:${seconds < 10 ? '0' + seconds : seconds}</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+        }
+  
+        duration--;
+  
+        if (duration < 0) {
+          clearInterval(countdown);
+          if (dealBanner) {
+            dealBanner.classList.remove("bg-danger");
+            dealBanner.classList.add("bg-secondary");
+            dealBanner.innerHTML = `
+              Deal expired. Want an extra 2 minutes? Subscribe to our email list to extend offer:
+              <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control d-inline-block w-auto mx-2" />
+              <button onclick="restartTimer()" class="btn btn-sm btn-primary">Get 2 More Minutes</button>
+            `;
+          }
+          localStorage.removeItem("discountExpires");
+        }
+      }, 1000);
+  
+      window.applyDiscount = function () {
+        if (duration > 0) {
+          const now = new Date().getTime();
+          const expires = now + (duration * 1000);
+          localStorage.setItem("disE", expires);
+          localStorage.setItem("disA", true); 
+          discountApplied = true;
+          window.location.href = "#booking?discount=15";
+        }
+      };
+  
+      // Restart the timer for 2 minutes
+      window.restartTimer = function () {
+        const emailInput = document.getElementById("restartEmail");
+        const email = emailInput ? emailInput.value : null;
+  
+        if (email && validateEmail(email)) {
+          duration = 2 * 60; 
+          dealBanner.classList.remove("bg-secondary");
+          dealBanner.classList.add("bg-danger");
+          countdown; 
+          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">02:00</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      };
+  
+      // Validate email format
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+  
+      // Optional: expose flag globally
+      window.discountApplied = localStorage.getItem("discountApplied") === "true";
+    });
+  </script>
   
   
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
