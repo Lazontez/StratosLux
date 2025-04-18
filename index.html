@@ -429,7 +429,7 @@
         const seconds = duration % 60;
 
         if (dealBanner) {
-          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes}:${seconds < 10 ? '0' + seconds : seconds}</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes} Minutes and ${seconds < 10 ? '0' + seconds : seconds} Seconds!</span> <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
         }
 
         duration--;
