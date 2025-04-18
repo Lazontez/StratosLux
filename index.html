@@ -392,112 +392,43 @@
     crossorigin="anonymous"></script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let duration = 15 * 60; 
-        let dA = false;
+      document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+  
+        const discountApplied = localStorage.getItem("discountApplied") === "true";
     
-        const dealBanner = document.getElementById("deal-banner");
+        const customerName = document.getElementById("customerName").value;
     
-        const countdown = setInterval(() => {
-          const minutes = Math.floor(duration / 60);
-          const seconds = duration % 60;
-    
-          if (dealBanner) {
-            dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes}:${seconds < 10 ? '0' + seconds : seconds}</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
-          }
-    
-          duration--;
-    
-          if (duration < 0) {
-            clearInterval(countdown);
-            if (dealBanner) {
-              dealBanner.classList.remove("bg-danger");
-              dealBanner.classList.add("bg-secondary");
-              dealBanner.innerHTML = `
-                Offer expired. Want an extra 2 minutes? Subscribe to our email list for more deals:
-                <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control d-inline-block w-auto mx-2" />
-                <button onclick="restartTimer()" class="btn btn-sm btn-primary">Extend Deal For 2 More Minutes</button>
-              `;
-            }
-            localStorage.removeItem("dE");
-          }
-        }, 1000);
-    
-        window.applyDiscount = function () {
-          if (duration > 0) {
-            const now = new Date().getTime();
-            const expires = now + (duration * 1000);
-            localStorage.setItem("disE", expires);
-            localStorage.setItem("disA", true); // flag to check later
-            dA = true;
-            window.location.href = "#booking?discount=15";
-          }
+        const bookingData = {
+          customername: customerName,
+          customeremail: document.getElementById("customerEmail").value,
+          customerphone: document.getElementById("customerPhone").value,
+          preferredlocation: document.getElementById("preferredLocation").value || "Not Added",
+          servicetype: document.getElementById("serviceType").value,
+          preferreddate: document.getElementById("preferredDate").value || "1/1/2025",
+          preferredtime: document.getElementById("preferredTime").value || "00:00:00",
+          notes: discountApplied ? "15% discount applied" : "No discount applied" // Add discount info in notes
         };
     
-        window.restartTimer = function () {
-          const emailInput = document.getElementById("restartEmail");
-          const email = emailInput ? emailInput.value : null;
+        try {
+          const response = await fetch("https://stratoslux-backend.onrender.com/api/bookings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(bookingData)
+          });
     
-          if (email && validateEmail(email)) {
-            duration = 2 * 60; 
-            dealBanner.classList.remove("bg-secondary");
-            dealBanner.classList.add("bg-danger");
-            countdown; 
-            dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">02:00</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+          if (response.ok) {
+            document.getElementById("bookingForm").reset();
+            window.location.href = "thank-you.html";
           } else {
-            alert("Please enter a valid email address.");
+            document.getElementById("bookingMessage").textContent = "There was an error processing your booking. Please try again later.";
           }
-        };
-    
-        // Validate email format
-        function validateEmail(email) {
-          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return re.test(email);
+        } catch (error) {
+          console.error("Error submitting booking:", error);
+          document.getElementById("bookingMessage").textContent = "There was an error submitting your booking. Please check your connection and try again.";
         }
-        window.dA = localStorage.getItem("dA") === "true";
       });
     </script>
-
-<script>
-  document.getElementById("bookingForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    // Check if discount is applied
-    const discountApplied = localStorage.getItem("discountApplied") === "true";
-
-    // Append "15% Off" to the customer name if discount is applied
-    const customerName = document.getElementById("customerName").value;
-    const finalCustomerName = discountApplied ? `${customerName} (15% Off)` : customerName;
-
-    const bookingData = {
-      customername: finalCustomerName, // Updated name with discount info
-      customeremail: document.getElementById("customerEmail").value,
-      customerphone: document.getElementById("customerPhone").value,
-      preferredlocation: document.getElementById("preferredLocation").value || "Not Added",
-      servicetype: document.getElementById("serviceType").value,
-      preferreddate: document.getElementById("preferredDate").value || "1/1/2025",
-      preferredtime: document.getElementById("preferredTime").value || "00:00:00"
-    };
-
-    try {
-      const response = await fetch("https://stratoslux-backend.onrender.com/api/bookings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(bookingData)
-      });
-
-      if (response.ok) {
-        document.getElementById("bookingForm").reset();
-        window.location.href = "thank-you.html";
-      } else {
-        document.getElementById("bookingMessage").textContent = "There was an error processing your booking. Please try again later.";
-      }
-    } catch (error) {
-      console.error("Error submitting booking:", error);
-      document.getElementById("bookingMessage").textContent = "There was an error submitting your booking. Please check your connection and try again.";
-    }
-  });
-</script>
 </body>
 
 </html>
