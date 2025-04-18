@@ -78,3 +78,35 @@ main {
         padding: 10px;
     }
 }
+
+/* Sticky Deal Banner */
+#deal-banner {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Expired Banner Styling */
+#deal-banner.expired {
+    background-color: var(--primary-black); /* Subtle black background */
+    color: var(--text-white); /* White text */
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+  
+  /* Close Button for Expired Banner */
+#deal-banner .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    cursor: pointer;
+  }
+  
+  #deal-banner .btn-close:hover {
+    color: var(--primary-red);
+  }

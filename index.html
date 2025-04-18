@@ -439,6 +439,8 @@
         <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control mb-2 mb-md-0 me-md-2" />
         <button onclick="restartTimer()" class="btn btn-lg booking-btn">Get 2 More Minutes</button>
       </div>
+      <button id="closeBanner" class="btn-close text-white" aria-label="Close" onclick="closeBanner()"></button>
+
     </div>
   `;
           }
@@ -457,6 +459,9 @@
         }
       };
 
+      window.closeBanner = function () {
+      dealBanner.style.display = "none"; 
+    };
 
       window.restartTimer = function () {
         const emailInput = document.getElementById("restartEmail");
