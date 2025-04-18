@@ -18,6 +18,7 @@
     content="https://raw.githubusercontent.com/Lazontez/StratosLux/main/assets/stratoslux_car_detailing_smyrna_tn_logo.svg" />
   <meta property="og:url" content="http://www.stratosluxdetailing.com" />
   <meta property="og:type" content="website" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
   <script type="application/ld+json">
     {
@@ -120,8 +121,8 @@
       </div>
     </nav>
   
-    <div id="deal-banner" class="text-center py-2 bg-danger text-white">
-      Limited Offer: 15% Off If You Book in the Next <span id="deal-timer">15:00</span> Minutes!
+       <div id="deal-banner" class="text-center py-2 text-white sticky-top" style="background-color: var(--primary-red);">
+      Limited Offer: 15% Off If You Book in the Next <span id="deal-timer">8:00</span> Minutes!
       <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>
     </div>
     
@@ -264,7 +265,6 @@
     </div>
   </section>
 
-  <!-- Reviews Section -->
   <section id="reviews" class="reviews-section py-5 bg-dark text-white">
     <div class="container">
       <h2 class="section-title text-center">What Our Clients Say</h2>
@@ -272,42 +272,41 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"I recently had my car detailed by StratosLux Detailing and was blown away by their
-                professionalism and attention to detail. My car now shines like it just rolled out of the showroom.
-                Highly recommended!"</p>
+              <p class="mb-4">"I recently had my car detailed by StratosLux Detailing and was blown away by their professionalism and attention to detail. My car now shines like it just rolled out of the showroom. Highly recommended!"</p>
               <footer class="blockquote-footer text-white">Marcus H.</footer>
+              <div class="review-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
             </blockquote>
           </div>
           <div class="carousel-item">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"StratosLux Detailing gave my old hatchback a fresh new look! They were punctual,
-                friendly, and the service was worth every penny. My car's interior has never looked cleaner. I'm a very
-                happy customer!"</p>
+              <p class="mb-4">"StratosLux Detailing gave my old hatchback a fresh new look! They were punctual, friendly, and the service was worth every penny. My car's interior has never looked cleaner. I'm a very happy customer!"</p>
               <footer class="blockquote-footer text-white">Elena M.</footer>
+              <div class="review-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
             </blockquote>
           </div>
           <div class="carousel-item">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"As a busy entrepreneur, convenience and quality are key. StratosLux came right to my
-                office and transformed my car in no time. The team was courteous, efficient, and left everything
-                spotless. I'll definitely book again!"</p>
+              <p class="mb-4">"As a busy entrepreneur, convenience and quality are key. StratosLux came right to my office and transformed my car in no time. The team was courteous, efficient, and left everything spotless. I'll definitely book again!"</p>
               <footer class="blockquote-footer text-white">David L.</footer>
-            </blockquote>
-          </div>
-          <div class="carousel-item">
-            <blockquote class="blockquote text-center">
-              <p class="mb-4">"I'm really particular about my car's appearance, and StratosLux Detailing exceeded all my
-                expectations. Their meticulous approach and premium service truly set them apart. My car has never
-                looked better!"</p>
-              <footer class="blockquote-footer text-white">Samantha R.</footer>
-            </blockquote>
-          </div>
-          <div class="carousel-item">
-            <blockquote class="blockquote text-center">
-              <p class="mb-4">"I have two kids and a dog, so my SUV was basically a rolling disaster. Crumbs, pet hair,
-                mystery stains—StratosLux handled it all like magic. It looks and smells brand new! I honestly didn’t
-                think it was possible. Worth every cent!"</p>
-              <footer class="blockquote-footer text-white">Jessica T.</footer>
+              <div class="review-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
             </blockquote>
           </div>
         </div>
@@ -384,73 +383,69 @@
     </div>
   </footer>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let duration = 15 * 60; // 15 minutes in seconds
-      let discountApplied = false;
-  
-      const dealBanner = document.getElementById("deal-banner");
-  
-      const countdown = setInterval(() => {
-        const minutes = Math.floor(duration / 60);
-        const seconds = duration % 60;
-  
-        if (dealBanner) {
-          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes}:${seconds < 10 ? '0' + seconds : seconds}</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
-        }
-  
-        duration--;
-  
-        if (duration < 0) {
-          clearInterval(countdown);
-          if (dealBanner) {
-            dealBanner.classList.remove("bg-danger");
-            dealBanner.classList.add("bg-secondary");
-            dealBanner.innerHTML = `
-              Deal expired. Want an extra 2 minutes? Subscribe to our email list to extend offer:
-              <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control d-inline-block w-auto mx-2" />
-              <button onclick="restartTimer()" class="btn btn-sm btn-primary">Get 2 More Minutes</button>
-            `;
-          }
-          localStorage.removeItem("discountExpires");
-        }
-      }, 1000);
-  
-      window.applyDiscount = function () {
-        if (duration > 0) {
-          const now = new Date().getTime();
-          const expires = now + (duration * 1000);
-          localStorage.setItem("disE", expires);
-          localStorage.setItem("disA", true); 
-          discountApplied = true;
-          window.location.href = "#booking?discount=15";
-        }
-      };
-  
-      // Restart the timer for 2 minutes
-      window.restartTimer = function () {
-        const emailInput = document.getElementById("restartEmail");
-        const email = emailInput ? emailInput.value : null;
-  
-        if (email && validateEmail(email)) {
-          duration = 2 * 60; 
-          dealBanner.classList.remove("bg-secondary");
-          dealBanner.classList.add("bg-danger");
-          countdown; 
-          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">02:00</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
-        } else {
-          alert("Please enter a valid email address.");
-        }
-      };
-  
-      // Validate email format
-      function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+   document.addEventListener("DOMContentLoaded", function () {
+  let duration = 8 * 60; 
+  let discountApplied = false;
+
+  const dealBanner = document.getElementById("deal-banner");
+
+  const countdown = setInterval(() => {
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+
+    if (dealBanner) {
+      dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes}:${seconds < 10 ? '0' + seconds : seconds}</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+    }
+
+    duration--;
+
+    if (duration < 0) {
+      clearInterval(countdown);
+      if (dealBanner) {
+        dealBanner.classList.add("expired");
+        dealBanner.innerHTML = `
+          Deal expired. Want an extra 2 minutes? Subscribe to our email list to extend the offer:
+          <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control d-inline-block w-auto mx-2" />
+          <button onclick="restartTimer()" class="btn btn-sm btn-primary">Get 2 More Minutes</button>
+        `;
       }
-  
-      // Optional: expose flag globally
-      window.discountApplied = localStorage.getItem("discountApplied") === "true";
-    });
+      localStorage.removeItem("discountExpires");
+    }
+  }, 1000);
+
+  window.applyDiscount = function () {
+    if (duration > 0) {
+      const now = new Date().getTime();
+      const expires = now + duration * 1000;
+      localStorage.setItem("disE", expires);
+      localStorage.setItem("disA", true);
+      discountApplied = true;
+      window.location.href = "#booking?discount=15";
+    }
+  };
+
+ 
+  window.restartTimer = function () {
+    const emailInput = document.getElementById("restartEmail");
+    const email = emailInput ? emailInput.value : null;
+
+    if (email && validateEmail(email)) {
+      duration = 1 * 60; 
+      dealBanner.classList.remove("expired");
+      dealBanner.style.backgroundColor = "var(--primary-red)";
+      dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">02:00</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+    } else {
+      alert("Please enter a valid email address.");
+    }
+  };
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  // Optional: expose flag globally
+  window.discountApplied = localStorage.getItem("discountApplied") === "true";
+});
   </script>
   
   

@@ -193,3 +193,26 @@ body, html {
   #deal-timer{
     font-weight: bold;
   }
+
+  .review-stars {
+    margin-top: 10px;
+  }
+  
+  .review-stars i {
+    color: var(--primary-gold); 
+    font-size: 1.2rem;
+    margin: 0 2px;
+  }
+#deal-banner {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#deal-banner.expired {
+  background-color: var(--primary-black);
+  color: var(--text-white);
+  font-size: 0.9rem;
+}
