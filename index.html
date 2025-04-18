@@ -49,7 +49,28 @@
       ]
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "StratosLux Detailing"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Marcus H."
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "I recently had my car detailed by StratosLux Detailing and was blown away by their professionalism and attention to detail. My car now shines like it just rolled out of the showroom. Highly recommended!"
+    }
 
+    
+    </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
@@ -79,6 +100,8 @@
       });
       return false;
     }
+
+
   </script>
 </head>
 
@@ -410,11 +433,11 @@
           if (dealBanner) {
             dealBanner.classList.add("expired");
             dealBanner.innerHTML = `
-    <div class="container">
+    <div class="container text-center">
       <p class="mb-2">Deal expired. Want an extra 2 minutes? Subscribe to our email list to extend the offer:</p>
-      <div class="d-flex flex-column flex-md-row align-items-center">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-center">
         <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control mb-2 mb-md-0 me-md-2" />
-        <button onclick="restartTimer()" class="btn btn-primary">Get 2 More Minutes</button>
+        <button onclick="restartTimer()" class="btn btn-lg booking-btn">Get 2 More Minutes</button>
       </div>
     </div>
   `;
@@ -458,17 +481,13 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       flatpickr("#preferredDate", {
-        dateFormat: "m/d/Y", 
-        minDate: new Date().fp_incr(1), 
-        maxDate: new Date().fp_incr(90), 
+        minDate: new Date().fp_incr(2),
+        maxDate: new Date().fp_incr(90),
         altInput: true,
-        altFormat: "F j", 
-        disableMobile: true, // Force desktop-style calendar on mobile
-        disable: [
-          "2025-04-20", // Easter (April 20, 2025)
-          "2025-04-21", // Day after Easter
-          "2025-04-30"  // April 30, 2025
-        ]
+        altFormat: "F j",
+        disableMobile: true,
+        disable: ["2025-04-20", "2025-04-21", "2025-04-30", new Date(2025, 4, 9)],
+        dateFormat: "Y-m-d"
       });
     });
   </script>
@@ -482,8 +501,9 @@
     document.getElementById("bookingForm").addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const discountApplied = localStorage.getItem("discountApplied") === "true";
 
+
+      const discountApplied = localStorage.getItem("discountApplied") === "true";
       const customerName = document.getElementById("customerName").value;
 
       const bookingData = {

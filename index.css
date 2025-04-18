@@ -203,16 +203,49 @@ body, html {
     font-size: 1.2rem;
     margin: 0 2px;
   }
-#deal-banner {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Expired Deal Banner */
+#deal-banner.expired {
+  background-color: var(--primary-black); /* Match the site's black theme */
+  color: var(--text-white); /* White text for readability */
+  padding: 15px 0;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
-#deal-banner.expired {
-  background-color: var(--primary-black);
+/* Input Field in Expired Banner */
+#deal-banner input[type="email"] {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button in Expired Banner */
+#deal-banner .btn.booking-btn {
+  background-color: var(--primary-red); /* Match the site's red theme */
   color: var(--text-white);
-  font-size: 0.9rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#deal-banner .btn.booking-btn:hover {
+  background-color: var(--primary-gold); 
+  color: var(--primary-black);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #deal-banner .d-flex {
+    flex-direction: column;
+  }
+
+  #deal-banner input[type="email"] {
+    margin-bottom: 10px;
+  }
 }
