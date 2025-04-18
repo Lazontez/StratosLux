@@ -402,13 +402,17 @@
     if (duration < 0) {
       clearInterval(countdown);
       if (dealBanner) {
-        dealBanner.classList.add("expired");
-        dealBanner.innerHTML = `
-          Deal expired. Want an extra 2 minutes? Subscribe to our email list to extend the offer:
-          <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control d-inline-block w-auto mx-2" />
-          <button onclick="restartTimer()" class="btn btn-sm btn-primary">Get 2 More Minutes</button>
-        `;
-      }
+  dealBanner.classList.add("expired");
+  dealBanner.innerHTML = `
+    <div class="container">
+      <p class="mb-2">Deal expired. Want an extra 2 minutes? Subscribe to our email list to extend the offer:</p>
+      <div class="d-flex flex-column flex-md-row align-items-center">
+        <input type="email" id="restartEmail" placeholder="Enter your email" class="form-control mb-2 mb-md-0 me-md-2" />
+        <button onclick="restartTimer()" class="btn btn-primary">Get 2 More Minutes</button>
+      </div>
+    </div>
+  `;
+}
       localStorage.removeItem("discountExpires");
     }
   }, 1000);
