@@ -88,12 +88,13 @@
     <div id="nav-call-banner" class="text-center py-2 bg-dark text-white">
       Call Us Now! (615)-922-1552
     </div>
-  
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="./assets/stratoslux_car_detailing_smyrna_tn_logo.svg" alt="StratosLux Detailing Logo" style="height: 80px;" />
+          <img src="./assets/stratoslux_car_detailing_smyrna_tn_logo.svg" alt="StratosLux Detailing Logo"
+            style="height: 80px;" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,14 +121,14 @@
         </div>
       </div>
     </nav>
-  
-       <div id="deal-banner" class="text-center py-2 text-white sticky-top" style="background-color: var(--primary-red);">
+
+    <div id="deal-banner" class="text-center py-2 text-white sticky-top" style="background-color: var(--primary-red);">
       Limited Offer: 15% Off If You Book in the Next <span id="deal-timer">8:00</span> Minutes!
       <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>
     </div>
-    
+
   </header>
-  
+
 
   <!-- Hero Section -->
   <section id="hero" class="hero-section">
@@ -272,7 +273,9 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"I recently had my car detailed by StratosLux Detailing and was blown away by their professionalism and attention to detail. My car now shines like it just rolled out of the showroom. Highly recommended!"</p>
+              <p class="mb-4">"I recently had my car detailed by StratosLux Detailing and was blown away by their
+                professionalism and attention to detail. My car now shines like it just rolled out of the showroom.
+                Highly recommended!"</p>
               <footer class="blockquote-footer text-white">Marcus H.</footer>
               <div class="review-stars">
                 <i class="fas fa-star"></i>
@@ -285,7 +288,9 @@
           </div>
           <div class="carousel-item">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"StratosLux Detailing gave my old hatchback a fresh new look! They were punctual, friendly, and the service was worth every penny. My car's interior has never looked cleaner. I'm a very happy customer!"</p>
+              <p class="mb-4">"StratosLux Detailing gave my old hatchback a fresh new look! They were punctual,
+                friendly, and the service was worth every penny. My car's interior has never looked cleaner. I'm a very
+                happy customer!"</p>
               <footer class="blockquote-footer text-white">Elena M.</footer>
               <div class="review-stars">
                 <i class="fas fa-star"></i>
@@ -298,7 +303,9 @@
           </div>
           <div class="carousel-item">
             <blockquote class="blockquote text-center">
-              <p class="mb-4">"As a busy entrepreneur, convenience and quality are key. StratosLux came right to my office and transformed my car in no time. The team was courteous, efficient, and left everything spotless. I'll definitely book again!"</p>
+              <p class="mb-4">"As a busy entrepreneur, convenience and quality are key. StratosLux came right to my
+                office and transformed my car in no time. The team was courteous, efficient, and left everything
+                spotless. I'll definitely book again!"</p>
               <footer class="blockquote-footer text-white">David L.</footer>
               <div class="review-stars">
                 <i class="fas fa-star"></i>
@@ -334,7 +341,7 @@
         </div>
         <div class="mb-3">
           <label for="customerEmail" class="form-label">Email <span class="requiredField">*</span> </label>
-          <input type="email" class="form-control" id="customerEmail" name="customerEmail"  required/>
+          <input type="email" class="form-control" id="customerEmail" name="customerEmail" required />
         </div>
         <div class="mb-3">
           <label for="customerPhone" class="form-label">Phone <span class="requiredField">*</span> </label>
@@ -343,7 +350,7 @@
         <div class="mb-3">
           <label for="preferredLocation" class="form-label">Service Address</label>
           <input type="text" class="form-control" placeholder="Street address, city, and zip code"
-            id="preferredLocation" name="preferredLocation"  />
+            id="preferredLocation" name="preferredLocation" />
         </div>
         <div class="mb-3">
           <label for="serviceType" class="form-label">Service <span class="requiredField">*</span></label>
@@ -360,12 +367,11 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="preferredDate" class="form-label">Preferred Date</label>
-            <input type="text" class="form-control" id="preferredDate" name="preferredDate"  />
+            <input type="text" class="form-control" id="preferredDate" name="preferredDate" />
           </div>
           <div class="col-md-6 mb-3">
             <label for="preferredTime" class="form-label">Preferred Time</label>
-            <input type="time" class="form-control" id="preferredTime" name="preferredTime"  min="08:00"
-             max="20:00"/>
+            <input type="time" class="form-control" id="preferredTime" name="preferredTime" min="08:00" max="20:00" />
           </div>
         </div>
         <div class="d-grid">
@@ -383,27 +389,27 @@
     </div>
   </footer>
   <script>
-   document.addEventListener("DOMContentLoaded", function () {
-  let duration = 8 * 60; 
-  let discountApplied = false;
+    document.addEventListener("DOMContentLoaded", function () {
+      let duration = 8 * 60;
+      let discountApplied = false;
 
-  const dealBanner = document.getElementById("deal-banner");
+      const dealBanner = document.getElementById("deal-banner");
 
-  const countdown = setInterval(() => {
-    const minutes = Math.floor(duration / 60);
-    const seconds = duration % 60;
+      const countdown = setInterval(() => {
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
 
-    if (dealBanner) {
-      dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes}:${seconds < 10 ? '0' + seconds : seconds}</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
-    }
+        if (dealBanner) {
+          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">${minutes}:${seconds < 10 ? '0' + seconds : seconds}</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+        }
 
-    duration--;
+        duration--;
 
-    if (duration < 0) {
-      clearInterval(countdown);
-      if (dealBanner) {
-  dealBanner.classList.add("expired");
-  dealBanner.innerHTML = `
+        if (duration < 0) {
+          clearInterval(countdown);
+          if (dealBanner) {
+            dealBanner.classList.add("expired");
+            dealBanner.innerHTML = `
     <div class="container">
       <p class="mb-2">Deal expired. Want an extra 2 minutes? Subscribe to our email list to extend the offer:</p>
       <div class="d-flex flex-column flex-md-row align-items-center">
@@ -412,89 +418,88 @@
       </div>
     </div>
   `;
-}
-      localStorage.removeItem("discountExpires");
-    }
-  }, 1000);
+          }
+          localStorage.removeItem("discountExpires");
+        }
+      }, 1000);
 
-  window.applyDiscount = function () {
-    if (duration > 0) {
-      const now = new Date().getTime();
-      const expires = now + duration * 1000;
-      localStorage.setItem("disE", expires);
-      localStorage.setItem("disA", true);
-      discountApplied = true;
-      window.location.href = "#booking?discount=15";
-    }
-  };
+      window.applyDiscount = function () {
+        if (duration > 0) {
+          const now = new Date().getTime();
+          const expires = now + duration * 1000;
+          localStorage.setItem("discountExpired", expires);
+          localStorage.setItem("discountApplied", true);
+          discountApplied = true;
+          window.location.href = "#booking?discount=15";
+        }
+      };
 
- 
-  window.restartTimer = function () {
-    const emailInput = document.getElementById("restartEmail");
-    const email = emailInput ? emailInput.value : null;
 
-    if (email && validateEmail(email)) {
-      duration = 1 * 60; 
-      dealBanner.classList.remove("expired");
-      dealBanner.style.backgroundColor = "var(--primary-red)";
-      dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">02:00</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
-    } else {
-      alert("Please enter a valid email address.");
-    }
-  };
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
+      window.restartTimer = function () {
+        const emailInput = document.getElementById("restartEmail");
+        const email = emailInput ? emailInput.value : null;
 
-  // Optional: expose flag globally
-  window.discountApplied = localStorage.getItem("discountApplied") === "true";
-});
+        if (email && validateEmail(email)) {
+          duration = 1 * 60;
+          dealBanner.classList.remove("expired");
+          dealBanner.style.backgroundColor = "var(--primary-red)";
+          dealBanner.innerHTML = `Limited Offer: 15% Off If You Book in the Next <span style="font-weight: bold;">02:00</span> Minutes! <a href="#booking" onclick="applyDiscount()" class="text-white fw-bold ms-2">Book Now</a>`;
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      };
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+      }
+
+      window.discountApplied = localStorage.getItem("discountApplied") === "true";
+    });
   </script>
-  
-  
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-    <script>
-      document.getElementById("bookingForm").addEventListener("submit", async function (e) {
-        e.preventDefault();
-  
-        const discountApplied = localStorage.getItem("discountApplied") === "true";
-    
-        const customerName = document.getElementById("customerName").value;
-    
-        const bookingData = {
-          customername: customerName,
-          customeremail: document.getElementById("customerEmail").value,
-          customerphone: document.getElementById("customerPhone").value,
-          preferredlocation: document.getElementById("preferredLocation").value || "Not Added",
-          servicetype: document.getElementById("serviceType").value,
-          preferreddate: document.getElementById("preferredDate").value || "1/1/2025",
-          preferredtime: document.getElementById("preferredTime").value || "00:00:00",
-          notes: discountApplied ? "15% discount applied" : "No discount applied" 
-        };
-    
-        try {
-          const response = await fetch("https://stratoslux-backend.onrender.com/api/bookings", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(bookingData)
-          });
-    
-          if (response.ok) {
-            document.getElementById("bookingForm").reset();
-            window.location.href = "thank-you.html";
-          } else {
-            document.getElementById("bookingMessage").textContent = "There was an error processing your booking. Please try again later.";
-          }
-        } catch (error) {
-          console.error("Error submitting booking:", error);
-          document.getElementById("bookingMessage").textContent = "There was an error submitting your booking. Please check your connection and try again.";
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const discountApplied = localStorage.getItem("discountApplied") === "true";
+
+      const customerName = document.getElementById("customerName").value;
+
+      const bookingData = {
+        customername: customerName,
+        customeremail: document.getElementById("customerEmail").value,
+        customerphone: document.getElementById("customerPhone").value,
+        preferredlocation: document.getElementById("preferredLocation").value || "Not Added",
+        servicetype: document.getElementById("serviceType").value,
+        preferreddate: document.getElementById("preferredDate").value || "1/1/2025",
+        preferredtime: document.getElementById("preferredTime").value || "00:00:00",
+        notes: discountApplied ? "15% discount applied" : "No discount applied"
+      };
+
+      try {
+        const response = await fetch("https://stratoslux-backend.onrender.com/api/bookings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(bookingData)
+        });
+
+        if (response.ok) {
+          document.getElementById("bookingForm").reset();
+          window.location.href = "thank-you.html";
+        } else {
+          document.getElementById("bookingMessage").textContent = "There was an error processing your booking. Please try again later.";
         }
-      });
-    </script>
+      } catch (error) {
+        console.error("Error submitting booking:", error);
+        document.getElementById("bookingMessage").textContent = "There was an error submitting your booking. Please check your connection and try again.";
+      }
+    });
+  </script>
 </body>
 
 </html>
